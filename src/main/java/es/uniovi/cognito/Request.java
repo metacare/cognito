@@ -22,7 +22,9 @@
  */
 package es.uniovi.cognito;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Hello world!.
@@ -35,22 +37,10 @@ import lombok.Data;
  * @see java.lang.Object#toString()
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Request {
 
 	/** The to anonimyze. */
 	private String toAnonimyze = "";
-	
-	/**
-	 * Instantiates a new request.
-	 *
-	 * @param toAnonimyze the to anonimyze
-	 */
-	public Request(String toAnonimyze) {
-		this.toAnonimyze = toAnonimyze;
-	}
-	
-	/**
-	 * Instantiates a new request.
-	 */
-	public Request() {}
 }

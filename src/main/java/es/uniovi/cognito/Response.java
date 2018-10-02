@@ -22,28 +22,18 @@
  */
 package es.uniovi.cognito;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /* (non-Javadoc)
  * @see java.lang.Object#toString()
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Response {
 
 	/** The text anonimyzed. */
 	private String textAnonimyzed = "";
-	
-	/**
-	 * Instantiates a new response.
-	 */
-	public Response() {}
-	
-	/**
-	 * Instantiates a new response.
-	 *
-	 * @param textAnonimyzed the text anonimyzed
-	 */
-	public Response(String textAnonimyzed) {
-		this.textAnonimyzed = textAnonimyzed;
-	}
 }
