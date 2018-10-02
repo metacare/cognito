@@ -23,17 +23,17 @@
 package es.uniovi.cognito;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /* (non-Javadoc)
  * @see java.lang.Object#toString()
  */
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Response {
 
 	/** The text anonimyzed. */
+	@Getter
 	private String textAnonimyzed = "";
 }

@@ -28,6 +28,8 @@ import java.util.Set;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
+import lombok.extern.slf4j.Slf4j;
+
 
 /**
  * The Class Anonymizer.
@@ -35,6 +37,7 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
  * @author Guillermo Facundo Colunga
  * @version 201806081225
  */
+@Slf4j
 public class Anonymizer implements RequestHandler<Request, Response> {
 	
 	/** The personal data. */
@@ -46,6 +49,7 @@ public class Anonymizer implements RequestHandler<Request, Response> {
 	@Override
 	public Response handleRequest( Request input, Context context ) {
 		setUp();
+		log.debug( "Request received. - Anonymyzing: " + new Response(this.anonymizeText( input.getToAnonimyze() )).getTextAnonimyzed());
 		return new Response(this.anonymizeText(input.getToAnonimyze()));
 	}
 	
