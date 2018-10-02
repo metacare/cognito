@@ -28,13 +28,14 @@ import java.util.Set;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
+
 /**
- * The Class Anonimyzer.
+ * The Class Anonymizer.
  *
  * @author Guillermo Facundo Colunga
  * @version 201806081225
  */
-public class Anonimyzer implements RequestHandler<Request, Response> {
+public class Anonymizer implements RequestHandler<Request, Response> {
 	
 	/** The personal data. */
 	private Set<String> personalData = new HashSet<String>();
@@ -45,14 +46,14 @@ public class Anonimyzer implements RequestHandler<Request, Response> {
 	@Override
 	public Response handleRequest( Request input, Context context ) {
 		setUp();
-		return new Response(this.anonimyzeText(input.getToAnonimyze()));
+		return new Response(this.anonymizeText(input.getToAnonimyze()));
 	}
 	
 	/**
 	 * Sets the up.
 	 */
 	private void setUp() {
-		personalData.add( "Paco" );
+		personalData.add( "paco" );
 		// Add more people here and personal data.
 	}
 	
@@ -62,11 +63,11 @@ public class Anonimyzer implements RequestHandler<Request, Response> {
 	 * @param text the text
 	 * @return the string
 	 */
-	public String anonimyzeText(String text) {
+	public String anonymizeText(String text) {
 		String[] words = text.split(" ");
 		text = "";
 		for(String word : words) {
-			if(personalData.contains( word )) {
+			if(personalData.contains( word.toLowerCase() )) {
 				word = "xxx";
 			}
 			text += word + " ";
