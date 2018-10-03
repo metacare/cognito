@@ -20,7 +20,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package es.uniovi.cognito;
+package es.metacare.cognito;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -38,7 +38,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version 201806081225
  */
 @Slf4j
-public class Anonymizer implements RequestHandler<Request, Response> {
+public class AWSRequestHandler implements RequestHandler<Request, Response> {
 	
 	/** The personal data. */
 	private Set<String> personalData = new HashSet<String>();
@@ -52,6 +52,8 @@ public class Anonymizer implements RequestHandler<Request, Response> {
 		log.debug( "Request received. - Anonymyzing: " + new Response(this.anonymizeText( input.getToAnonimyze() )).getTextAnonimyzed());
 		return new Response(this.anonymizeText(input.getToAnonimyze()));
 	}
+	
+	// Very simple version of the anonymization procedure.
 	
 	/**
 	 * Sets the up.
