@@ -1,2 +1,2 @@
 # cognito
-Data anonymizer module to protect personal data from being disclosed.
+Data anonymizer module to protect personal data from being disclosed. 
