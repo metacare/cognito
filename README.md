@@ -1,4 +1,4 @@
-![logo](https://github.com/metacare/cognito/blob/master/.github/cognito-logo.png)
+![logo](https://github.com/metacare/cognito/blob/master/.github/cognito-logo-left.png)
 
 # Welcome to cognito
 
